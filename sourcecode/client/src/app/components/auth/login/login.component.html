@@ -1,0 +1,44 @@
+<section class="container OptCont">
+  <div class="WebAppMainLogo2 col-lg-12">
+    <img src="assets/images/logo.png" alt="" />
+  </div>
+  <div class="col-xs-12 RegOtpMain ">
+    <div class=" text-center F7 Bold3">
+      <i class="fas fa-unlock-alt F5 MarginRight10 GreenText"></i>Log in</div>
+    <fieldset class="col-lg-4 col-lg-offset-4 col-xs-12 col-xs-offset-0 ">
+      <div class="control-group MarginTop20 ">
+        <!-- Username -->
+        <label class="control-label F2 Bold4" for="username">Username</label>
+        <div class="controls">
+          <input type="text" required id="username" name="username" placeholder="enter username or email" [(ngModel)]="user.email"
+            class="PhoneNumInp F2 Bold3">
+        </div>
+      </div>
+      <div class="control-group MarginTop20 ">
+        <!-- Password-->
+        <label class="control-label F2 Bold4" for="password">Password</label>
+        <div class="controls ">
+          <input type="password" id="password" name="password" placeholder="enter password" [(ngModel)]="user.password"
+            class="PhoneNumInp F2 Bold3">
+        </div>
+      </div>
+      <div class="control-group  LoginCheck">
+        <label for="Terms" class="F2 Bold3">
+          <input type="checkbox" id="Terms" checked> I accept
+          <a href="#" class="NorGreenLink">terms</a> &
+          <a href="#" class="NorGreenLink">conditions</a>.</label>
+      </div>
+      <div class="control-group TextCenter ">
+        <!-- Button -->
+        <button (click)="login()" [disabled]= "!connected" class="btn GreenBut Bold3">
+        {{connected ? 'Log In' : 'Offline'}}
+        </button>
+      </div>
+    </fieldset>
+  </div>
+</section>
+<footer class="loginFooter TextCenter F2 Bold3">ELSBULY INC. All rights reserved.
+  <div>
+    <a href="#" class="NorGreenLink">Privacy Policy</a>
+  </div>
+</footer>

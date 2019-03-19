@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="card-container">
+    <ng-container *ngIf="ideaPreference; then ideaBlock; else ideaNullBlock "></ng-container>
+       <ng-template #ideaBlock>
+         <div class="card-1">
+            <div class="card">
+                <div class="card__description" >
+                    <div class='heading'> New Ideas</div>
+                  <div *ngFor='let idea of Ideas | slice:0:4; let i = index' class="col-xs-6 col-md-4  Horz_strip col">
+                    <span class="Mid">
+                      {{idea.idea_type}} {{idea.script_name}} {{idea.actual_exchange_code}} {{idea.idea_time}} ${{idea.price_target1}} OPTIONS
+                      ${{idea.idea_strength}}
+                      <span class="advName" >{{idea.user_name}}</span>
+                    </span>
+                  </div>
+                  <div class="overlay">
+                      <a  (click)="navigate('IDEAS')" >More>></a>
+              </div>
+                </div>              
+              </div>
+         </div>
+          
+       </ng-template>
+       <ng-template  #ideaNullBlock>
+          <div class="card">
+              <div class="card__description">
+                Please Select your Widgets in Preference Page  
+              </div>
+            </div>
+         
+      </ng-template>
+    
+      <ng-container *ngIf="advisorPreference; then advisorBlock; else advisornullBlock "></ng-container>
+      <ng-template #advisorBlock>
+        <div class="card-2">
+            <div class="card" >
+                <div class="card__description">
+                    <div class='heading'> Advisor Profie</div>
+                  <div *ngFor="let advisor of advisor_data | slice:0:4; let i = index" class="col-xs-6 col-md-4  Horz_strip col">
+                      {{advisor.user_name}}
+                  </div>
+                  <div class="overlay">
+                      <a (click)="navigate('ADVISORS')">View>></a>
+              </div>   
+                </div>
+                </div>
+        </div>
+       
+      </ng-template>
+      <ng-template #advisornullBlock>
+        <div class="card">
+          <div class="card__description">
+            you have this widgets to show  
+          </div>
+        </div>
+      </ng-template>
+
+
+      <ng-container *ngIf="profilePreference; then profileBlock; else profileNullBlock"></ng-container>
+      <ng-template #profileBlock>
+        <div class="card-3">
+            <div class="card">
+                <div class="card__description">
+                    <div class='heading'> User Profile</div>
+                  <img class='thumbnail' id="picture" accept='' src="{{url}}{{this.image_name}}"> <p>Hello {{first_name || user_name || email_id}}</p>
+                  <div class="overlay">
+                          <a (click)="navigate('PROFILE')">View>></a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+      </ng-template>
+      
+      <ng-template #profileNullBlock>
+        <div class="card">
+          <div class="card__description">
+            you have not sleceted this widgets to show  
+          </div>
+        </div>
+      </ng-template>
+  
+  </section>
+</body>
+
+</html>
+<app-header></app-header>
+<app-footer></app-footer>

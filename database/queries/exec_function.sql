@@ -1,0 +1,1 @@
+select bs_user_validate('arangdal@yahoo.com','elsbuly') user_id from dual;

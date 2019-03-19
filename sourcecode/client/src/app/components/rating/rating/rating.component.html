@@ -1,0 +1,64 @@
+<form [formGroup]=form >
+  <div *ngFor="let idea of idea">
+
+    <div class="InnerMiddleTitle">
+      <span class="Mid">
+        <i class="far fa-star BottomTabIcon"></i> Ratings</span>
+    </div>
+    <div class="StripContainerSingle">
+      <div class="col-lg-12 col-xs-12 Horz_stripSingle">
+        <span class="Mid">{{idea?.idea_id}} {{idea?.idea_type}} {{idea?.script_name}} {{idea?.exchange_code}} {{idea?.idea_time}} ${{idea?.price_target1}}
+          OPTIONS ${{idea?.idea_strength}}
+          <span class="advName">Lucky Advisor</span>
+        </span>
+      </div>
+
+      <div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 F4 Bold3 BlackText TextCenter MarTop5 AutoOverFlow"> Your rating helps us to deliver
+        <br> better intelligence </div>
+      <div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 F4 Bold3 BlackText TextCenter MarTop5 AutoOverFlow">
+        
+        <star-rating [starType]="'svg'" space="around" staticColor = "positive"  (starClickChange)="onClick($event)"></star-rating>
+        <textarea formControlName="textArea" class="PhoneNumInp F2 Bold3"></textarea>
+      </div>
+      <div class="col-lg-12 evaluation ClearBoth TextCenter MarginTop25">
+        <div id="colorstar" class="starrr ratable F8"></div>
+      </div>
+      <div class="col-lg-12  ClearBoth  MarginTop15">
+        <div class="col-lg-6 col-xs-6 SmallStarsRight">
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" /> </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsLeft Bold2"> excellent profit </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsRight ClearBoth">
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" /> </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsLeft Bold2"> decent profit </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsRight ClearBoth">
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" /> </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsLeft Bold2"> no profit/no loss </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsRight ClearBoth">
+          <img src="assets/images/star_icon.png" alt="" />
+          <img src="assets/images/star_icon.png" alt="" /> </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsLeft Bold2"> little loss </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsRight ClearBoth">
+          <img src="assets/images/star_icon.png" alt="" /> </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsLeft Bold2"> decent loss </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsRight ClearBoth">
+          <input type="checkbox" />
+        </div>
+        <div class="col-lg-6 col-xs-6 SmallStarsLeft Bold2"> did not trade </div>
+        <div class="col-xs-12 text-center MarginTop20">
+          <button type="submit" (click)="createRating()" class="btn GreenBut">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<app-header></app-header>
+<app-footer></app-footer>

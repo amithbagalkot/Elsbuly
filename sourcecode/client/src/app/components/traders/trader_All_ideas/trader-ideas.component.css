@@ -1,0 +1,19 @@
+
+
+.card-description{
+    text-align: center;
+    font-size: 3rem;
+    width: 40vw;
+}
+
+.card {
+    display: grid;
+    width: 40vw;
+    height: 20vw;
+    margin-top: 20vh;
+    margin-left: 30vw;
+    color: #62b22b;
+    font: 2rem;
+    background:white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);  
+}

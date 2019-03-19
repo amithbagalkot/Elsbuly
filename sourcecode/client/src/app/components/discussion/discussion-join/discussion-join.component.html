@@ -1,0 +1,66 @@
+<div *ngFor="let idea of idea">
+  <div>
+  <div class="InnerMiddleTitle">
+    <span class="Mid">
+      <i class="fas fa-link BottomTabIcon"></i> Join</span>
+  </div>
+  <div class="StripContainerSingle_sm">
+     <div class="col-lg-12 col-xs-12 Horz_stripSingle">
+
+       <span class="Mid">{{idea?.idea_id}} {{idea?.idea_type}} {{idea?.script_name}} {{idea?.exchange_code}} {{idea?.idea_time}} ${{idea?.price_target1}}
+        OPTIONS ${{idea?.idea_strength}} LO by
+        <span class="advName">Lucky Advisor</span>
+      </span> 
+    </div> 
+
+  </div>
+  <div class="container ">
+
+    <div class="col-xs-12 ZeroPadding MidCol_sm  ">
+      <div class="MedTitle text-center F5 Bold3">Available</div>
+      <div class=" text-center F2 Bold3 GrayText">(Can join one per idea)</div>
+
+      <div class="MarTop5 TextCenter">
+        <div class="TableTop">
+          <div class="LeftTitle GreenText F4 Bold3">Discussion Board</div>
+          <div class="RightTitle GreenText F4 Bold3 TextCenter">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+        <div >
+
+       <ng-template>
+         
+       </ng-template>
+        <table class="greyGridTable " id="" >
+          <tbody>
+            <tr *ngFor = "let ideab of ideaBoard; let i=index">
+              <td></td>
+              <td style="width: 80%"  >{{ideab.idea_board_name}}</td>
+              <td style="width: 10%">{{ideaBoardTraderLength ? ideaBoardTraderLength : 0}}</td>
+              <td style="width: 10%" class="TextCenter">
+                <i class="fas fa-check GreenText Hide"></i>
+              </td>
+              <input type="radio" name="board1" value="consectetur" (change)="typeOfBoard(ideab)">
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+        <div class="MarTop5 TextCenter F2 Bold3">
+
+          By clicking on joining any discussion board, you agree to pay the applicable fees and accept the terms & conditions.
+        </div>
+
+      </div>
+      <div class="col-xs-12 text-center MarginTop25" >
+        <a href="discussion/detail/{{idea?.idea_id}}/{{ideaIdRouter}}" class="btn GreenBut" [class.disabled]="board_selection" >Continue</a>
+        <!-- <a role="button" (click)="discussionJoin()" class="btn GreenBut">Continue</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

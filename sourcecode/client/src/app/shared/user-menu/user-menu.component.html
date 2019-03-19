@@ -1,0 +1,44 @@
+<div class="BottomTabsMore">
+  <div class="navbar navbar-fixed-bottom elsbuly_bottombar" id="Footer" *ngIf="data?.length > 0">
+    <nav class="quicklinks col-md-offset-8 col-md-4 ZeroPadding">
+      <div *ngFor="let menu of data | slice: 0: half; let i= index">
+        <a class="BottomTabs" (click)="pathResolve(menu.menu_code)" role="button">
+          <i *ngIf="menu.menu_name == 'Preferences'" class="fa fa-cog BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Ratings'" class="far fa-star BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Discussions'" class="far fa-comments  BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Ideas'" class="far fa-lightbulb BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Subscriptions'" class="far fa-newspaper BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Advisors'" class="fa fa-user BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Wallet'" class="fas fa-dollar-sign BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Generate'" class="fas fa-plus BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Money'" class="fas fa-dollar-sign BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Profile'" class="fa fa-user BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'Performance'" class="far fa-chart-bar BottomTabIcon"></i>
+          <i *ngIf="menu.menu_name == 'close'" class="glyphicon glyphicon-log-out" ></i>
+          <div> {{menu.menu_name}} </div>
+        </a>
+      </div>
+      <div class="BottomTabsMore dropup">
+        <a role="button" class="drpdown">
+          <i class="fas fa-ellipsis-v BottomTabIconMore dropdown-toggle" data-toggle="dropdown"></i>
+        </a>
+        <div class="dropdown-menu  dropdown-menu-right">
+          <div *ngFor="let menu of data | slice:half">
+            <a class="dropdown-item" (click)="pathResolve(menu.menu_code)" role="button">
+              <i *ngIf="menu.menu_name == 'Generate'" class="fas fa-plus BottomTabIcon"></i>
+              <i *ngIf="menu.menu_name == 'Ratings'" class="far fa-star BottomTabIcon"></i>
+               <i *ngIf="menu.menu_name == 'Wallet'" class="fas fa-dollar-sign BottomTabIcon"></i> 
+              <i *ngIf="menu.menu_name == 'Profile'" class="fa fa-user BottomTabIcon"></i>
+              <i *ngIf="menu.menu_name == 'Performance'" class="far fa-chart-bar BottomTabIcon"></i>
+              <i *ngIf="menu.menu_name == 'Discussions'" class="far fa-comments  BottomTabIcon"></i>
+              <i *ngIf="menu.menu_name == 'Advisors'" class="fa fa-user BottomTabIcon"></i>
+              <i *ngIf="menu.menu_name == 'Preferences'" class="fa fa-cog BottomTabIcon"></i>
+              <i *ngIf="menu.menu_name == 'close'" class="glyphicon glyphicon-log-out" ></i>
+              {{menu.menu_name}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+<div>

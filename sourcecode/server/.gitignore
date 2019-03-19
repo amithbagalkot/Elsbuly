@@ -1,0 +1,3 @@
+sourcecode/server/node_modules
+sourcecode/client/node_modules
+**/*.log

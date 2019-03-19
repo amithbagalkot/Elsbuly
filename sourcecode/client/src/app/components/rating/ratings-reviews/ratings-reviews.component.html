@@ -1,0 +1,41 @@
+ <app-header></app-header> 
+<div class="container-fluid">
+     <div *ngIf="no_ratings_reviews" class="row">
+          <div class="col-lg-12 col-md-12-col-sm-12 col-xs-12" >
+                <h3>This Idea don't have any ratings and reviews</h3>
+          </div>
+     </div>
+    <div class="row" *ngIf="ratings_reviews">
+     <div class="row">
+       <h2 class="rating_title">Ratings&Reviews</h2><br/>
+
+
+       <div class="col-lg-12 col-xs-12 stripSingle">
+        <span class="Mid" *ngFor="let idea of idea">{{idea?.idea_id}} {{idea?.idea_type}} {{idea?.script_name}} {{idea?.exchange_code}} {{idea?.idea_time}} ${{idea?.price_target1}}
+          OPTIONS ${{idea?.idea_strength}} LO by
+          <span class="advName">{{idea.user_name}}</span>
+        </span>
+      </div>
+
+
+
+       <span><h2 class="over_all_rating">{{rating}}★</h2></span>
+        <div class="rating">
+          <ul class="all_rating">
+              <span><li>5&nbsp;&nbsp;★★★★★ -----------------------------------&nbsp;&nbsp;{{five_star_users}}</li></span>
+              <span><li>4&nbsp;&nbsp;★★★★---------------------------------------&nbsp;&nbsp;{{four_star_users}}</li></span>
+              <span><li>3&nbsp;&nbsp;★★★------------------------------------------&nbsp;&nbsp;{{three_star_users}}</li></span>
+              <span><li>2&nbsp;&nbsp;★★---------------------------------------------&nbsp;&nbsp;{{two_star_users}}</li></span>
+              <span><li>1&nbsp;&nbsp;★------------------------------------------------&nbsp;&nbsp;{{one_star_users}}</li></span>
+            </ul>  
+       </div> 
+     </div>
+     <div class="row ratings_review " >
+             <div class="row data_rating " *ngFor="let ratings_review of rating_reviews">
+                     <div><span><span class="rating_num">{{ratings_review.idea_rating}}★</span>&nbsp;&nbsp;&nbsp;&nbsp;{{ratings_review.trader_name}}</span><br/>
+                     {{ratings_review.idea_rating_note}}</div><br/><svg width="14" height="14" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" class="_3Zp_NJ"><g><circle cx="6" cy="6" r="6" fill="#878787"></circle><path stroke="#FFF" stroke-width="1.5" d="M3 6l2 2 4-4" fill="#878787"></path></g></svg>Certified Trader&nbsp;&nbsp;&nbsp;&nbsp;{{ratings_review.date_created}}<hr/>
+             </div>        
+     </div>
+    </div>
+</div>
+<app-footer></app-footer>

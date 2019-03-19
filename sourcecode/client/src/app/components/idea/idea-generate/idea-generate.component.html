@@ -1,0 +1,148 @@
+<form [formGroup]="form" (ngSubmit)="createIdeas()">
+  <section class="container OptCont">
+    <div class="container-page">
+      <div class=" col-lg-12 col-md-6 ">
+        <h3 class="dark-grey WebTitle  col-lg-12" >{{connected ? 'Idea Generate' : 'Offline Mode cannot submit detail'}}</h3>
+        <div class="form-group col-lg-4">
+          <label>Exchange</label><span style="color:red">*</span>&nbsp;
+          <em *ngIf="form.get('exchange_code').invalid && form.get('exchange_code').touched" class="alert-text alert-danger">
+            <em *ngIf="form.get('exchange_code').hasError('required')" class="alert-text alert-danger"></em>
+            please fill required field
+          </em>
+          <input type="text" formControlName="exchange_code" name="" class="form-control halfInp" list="exchange" [(ngModel)]="exchange_code.exchange_code" value="">
+          <datalist type="text" id="exchange">
+              
+            <input *ngFor='let exchange of exchanges' [value]=exchange.exchange_code style="display: none;">
+              <option *ngFor='let exchange of exchanges' [value]=exchange.exchange_code></option>
+          </datalist>
+          <input type="text" name="" class="form-control Infobox" id=""  value="{{form.get('exchange_code').value}}" style="font-weight: bold;" readonly>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label>Segment</label>
+          <input type="text" formControlName="segment" name="" class="form-control halfInp" list="segment" value="">
+          <datalist id="segment" value="">
+            <option *ngFor='let segment of segments' [value]="segment.segment_name">
+          </datalist>
+          <input type="text" name="" class="form-control Infobox" id="" value="{{form.get('segment').value}}" readonly>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label>Instrument</label>
+          <input type="text" formControlName="instrument_code" name="" class="form-control halfInp" list="instrument" value="">
+          <datalist type="text" name="" id="instrument" value="">
+            <option *ngFor='let instrument of instruments' [value]="instrument.instrument_name">
+          </datalist>
+          <input type="text" name="" class="form-control Infobox" id="" value="{{form.get('instrument_code').value}}" readonly>
+        </div>
+
+        <div class="form-group col-lg-3 clear">
+          <label>Script</label>
+          <input type="" formControlName="script_name" name="" class="form-control" list="script" value="">
+          <datalist type="text" name="" id="script" value="">
+            <option *ngFor='let script of scripts' [value]="script.script_name">
+          </datalist>
+        </div>
+
+        <div class="form-group col-lg-3">
+          <label>Type</label><span style="color:red">*</span>&nbsp;
+          <em *ngIf="form.get('idea_type').invalid && form.get('idea_type').touched" class="alert-text alert-danger">
+            <em *ngIf="form.get('idea_type').hasError('required')" class="alert-text alert-danger">
+              please fill required field
+            </em>
+            <em *ngIf="form.get('idea_type').hasError('maxlength')">
+              maximum length is 40 Characters
+            </em>
+          </em>
+          <input type="" formControlName="idea_type" name="" class="form-control" id="" value="" required>
+        </div>
+        <div class="form-group col-lg-3">
+          <label>Expiry</label>
+          <input type="text" name="" class="form-control" id="" value="">
+        </div>
+        <div class="form-group col-lg-3">
+          <label>Strike</label>
+          <input type="" formControlName="strike" name="" class="form-control" id="" value="">
+        </div>
+
+        <div class="form-group col-lg-3">
+          <label>Target</label>
+          <input type="" formControlName="target" name="" class="form-control" id="" value="">
+        </div>
+
+        <div class="form-group col-lg-3">
+          <label>Target1</label>&nbsp;
+          <em *ngIf="form.get('price_target1').touched && form.get('price_target1').invalid" class="alert-text alert-danger">
+            <em *ngIf="form.get('price_target1').hasError('pattern')">
+              Please Enter Number
+            </em>
+            <em *ngIf="form.get('price_target1').hasError('maxlength')">
+              maximum length is 10
+            </em>
+          </em>
+          <input type="" formControlName="price_target1" name="" class="form-control" id="" value="">
+        </div>
+
+        <div class="form-group col-lg-3">
+          <label>Target2</label>&nbsp;
+          <em *ngIf="form.get('price_target2').touched && form.get('price_target2').invalid" class="alert-text alert-danger">
+            <em *ngIf="form.get('price_target2').hasError('pattern')">
+              Please Enter Number
+            </em>
+            <em *ngIf="form.get('price_target2').hasError('maxlength')">
+              maximum length is 10
+            </em>
+          </em>
+          <input type="" formControlName="price_target2" name="" class="form-control" id="" value="">
+        </div>
+        <div class="form-group col-lg-3">
+          <label>Target3</label>&nbsp;
+          <em *ngIf="form.get('price_target3').touched && form.get('price_target3').invalid" class="alert-text alert-danger">
+            <em *ngIf="form.get('price_target3').hasError('pattern')" class="alert-text alert-danger">
+              Please Enter Number
+            </em>
+            <em *ngIf="form.get('price_target3').hasError('maxlength')" >
+              maximum length is 10
+            </em>
+          </em>
+          <input type="" formControlName="price_target3" name="" class="form-control" id="" value="">
+        </div>
+        <div class="form-group col-lg-3">
+          <label>Stop loss</label>&nbsp;
+          <em *ngIf="form.get('price_stoploss').touched && form.get('price_stoploss').invalid" class="alert-text alert-danger">
+            <em *ngIf="form.get('price_stoploss').hasError('pattern')">
+              Please Enter Number
+            </em>
+          </em>
+          <input type="" formControlName="price_stoploss" name="" class="form-control" id="" value="">
+        </div>
+
+
+        <div class="form-group col-lg-8 clear">
+          <label>Note to trade</label>
+          <input type="" formControlName="advisor_rating_note" name="" class="form-control" id="" value="">
+        </div>
+
+        <div class="form-group col-lg-10">
+          <label>Ideas string</label><span style="color:red">*</span>&nbsp;
+          <em *ngIf="form.get('idea_string').touched && form.get('idea_string').invalid" class="alert-text alert-danger">
+            <em *ngIf="form.get('idea_string').hasError('required')">
+              IdeaString is required
+            </em>
+          </em>
+          <textarea formControlName="idea_string" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="form-group col-lg-4 clear">
+          <button type="submit" class="btn GreenBut" >
+           Submit</button>&nbsp;
+          <button type="button" class="btn GreenBut" (click)="reset()">Reset</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</form>
+<app-header></app-header>
+<app-footer></app-footer>

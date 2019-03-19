@@ -1,0 +1,49 @@
+{
+    "development": {
+        "db": {
+            "mysql": {
+                "username": "elsbulydev",
+                "password": "_2018#Elsbuly",
+                "database": "elsbulydev",
+                "host": "23.99.131.215",
+                "dialect": "mysql",
+                "operatorsAliases": "false"
+            }
+        },
+        "secrets":{
+            "session":"dsdf"
+        }
+    },
+    "test": {
+        "db": {
+            "mysql": {
+                "username": "elsbulydev",
+                "password": "_2018#Elsbuly",
+                "database": "elsbulydev",
+                "host": "23.99.131.215",
+                "dialect": "mysql"
+            }
+        },
+        "secrets":{
+            "session":"dsdf"
+        }
+    },
+    "production": {
+        "db": {
+            "mysql": {
+                "username": "elsbulydev",
+                "password": "_2018#Elsbuly",
+                "database": "elsbulydev",
+                "host": "23.99.131.215",
+                "dialect": "mysql"
+            }
+        },
+        "secrets":{
+            "session":"dsdf"
+        }
+    }
+}
+
+
+
+

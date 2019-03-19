@@ -1,0 +1,296 @@
+<form [formGroup]="PhoneForm" *ngIf="!regPhone">
+  <div class="modal fade " id="ChangeCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ChangeCode" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Country dial_code</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="CountryCodeTab">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class=" col-xs-12 RegLogo">
+      <img src="assets/images/logo.png" alt="" />
+    </div>
+
+    <div class="col-xs-12 RegOtpMain ">
+      <div class="BigTitle text-center ">Let's get started</div>
+      <div class="MedTitle text-center">What is your phone number?</div><br/><br/>
+     
+      <div class="row MedTitle text-center">
+          <span class="MedTitle"><input type="radio" value="advisor" name="user_type" (change)="registeras($event)"><label>Adviosr</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="user_type" value="trader" (change)="registeras($event)"><label>Trader</label>  </span>
+      </div>
+      <!--<input type="text" [value]="Country.dial_code">-->
+      <!--<input type="text"  name="" class="" list="country" value="">
+        <datalist type="text" id="country">
+          <option *ngFor='let Country of countryData?.data' [value]=Country.name>
+        </datalist>-->
+
+      <div class=" WelcomeContainer">
+        
+          <select class="PhoneNum counrtycode PhoneNumInp" formControlName="CountryDetails" id="CountryCode" (click)="country()">
+              <option disabled selected value> --countrycode -- </option>
+              <option *ngFor="let Country of countryData">{{Country.name}} {{Country.dial_code}}</option>
+            </select>
+            
+        <span class="Mid">
+            <span class="errormsg" *ngIf="PhoneForm.controls['RegPhoneNum'].invalid && PhoneForm.controls['RegPhoneNum'].dirty">
+                <span class="" style="color:firebrick" *ngIf="PhoneForm.controls['RegPhoneNum'].hasError('required')">
+                  <strong>Phone num is required</strong>
+                </span>
+                <span class="" style="color:firebrick" *ngIf="PhoneForm.controls['RegPhoneNum'].hasError('maxlength')">
+                  <strong>Phone num should be 10 digits</strong>
+                </span>
+            </span>
+          <div class="RegCenter">
+            <div class="col-xs-12 PhoneNumDiv">
+              <!-- <span *ngIf="PhoneForm.controls['RegPhoneNum'].invalid && PhoneForm.controls['RegPhoneNum'].dirty">
+                <span class="" style="color:firebrick" *ngIf="PhoneForm.controls['RegPhoneNum'].hasError('required')">
+                  <strong>Phone num is required</strong>
+                </span>
+                <span class="" style="color:firebrick" *ngIf="PhoneForm.controls['RegPhoneNum'].hasError('maxlength')">
+                  <strong>Phone num should be 10 digits</strong>
+                </span>
+              </span>-->
+              <!-- <div class="counrtycoddfe">
+                <select  formControlName="CountryDetails" id="CountryCode" (click)="country()">
+                  <option disabled selected value> -- select an CountryCode -- </option>
+                  <option *ngFor="let Country of countryData">{{Country.name}} {{Country.dial_code}}</option>
+                </select>
+              </div> -->
+       
+              <input type="tel" placeholder="enter 10 digits phone number" class="PhoneNumInp rq-form-element" value="" formControlName="RegPhoneNum"/>
+            </div>
+          </div>
+        </span>
+      
+      </div>
+    </div>
+    <!-- <div class='dropdown'>
+      <label class="control-label F2 Bold4" For='filter'>Register as</label>
+      <select  class='dropdown-content' (change)="registeras($event.target.value)">
+        <option selected= 'trader'>trader   </option>
+          <option value='advisor'>Advisor</option>
+      </select>
+    </div> -->
+
+    <div class="col-xs-12 text-center">
+      <button (click)="CountryPhoneNumber()" class="btn GreenBut" [disabled]="!countryDial||PhoneForm.invalid||user_type_selection">Continue</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+<!--<div *ngFor="let Country of countryList; let i=index" (click)="highlightSelected(Country)" name = "name">
+
+
+   
+  </div>-->
+<form [formGroup]="verfiyOTP" *ngIf="!registerOtp">
+  <div class="container ">
+    <div class=" col-xs-12 RegLogo">
+      <img src="assets/images/logo.png" alt="" />
+    </div>
+    <div class="col-xs-12 RegOtpMain ">
+      <div class="MedTitle text-center">Your phone number</div>
+      <div class=" WelcomeContainer">
+        <span class="Mid">
+          <div class="RegCenter">
+            <div class="col-xs-3 CountryCodeDiv">
+              <input type="text" class="CountryCodeInp" [value]="CountryCode" readonly/>
+            </div>
+            <div class="col-xs-7 PhoneNumDiv ">
+              <input type="tel" class="PhoneNumInp rq-form-element" readonly [value]="phoneNumber" />
+            </div>
+            <div class="col-xs-3 CountryCodeDiv OtpDiv">
+              <input type="text" class="CountryCodeInp" value="OTP" readonly/>
+            </div>
+            
+              <!-- <div class="col-xs-8 OtpDiv">
+                  <input  class="OTPInp" id="partitioned" type="text" maxlength="4" />
+              </div> -->
+               
+              <div class="col-xs-8 OtpDiv" >
+                <input type="text" #input1 (input)="onkey($event, input2)" class="OTPInp partitioned " maxlength="1" formControlName="otp_num_1">
+                <input type="text" #input2 (input)="onkey($event, input3)" class="OTPInp partitioned" maxlength="1"  formControlName="otp_num_2">
+                <input type="text" #input3 (input)="onkey($event, input4)" class="OTPInp partitioned " maxlength="1" formControlName="otp_num_3">
+                <input type="text" #input4 (input)="onkey($event, input5)" class="OTPInp  partitioned" maxlength="1" formControlName="otp_num_4">
+                <input type="text" #input5 (input)="onkey($event, input6)" class="OTPInp partitioned " maxlength="1" formControlName="otp_num_5">
+                <input type="text" #input6  class="OTPInp partitioned " maxlength="1" formControlName="otp_num_6"> 
+                <i></i> 
+              </div>
+              <a role="button" (click)="resendOtp()" class="NorLink">Resend OTP</a>
+           
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center ">
+      <a role="button" (click)="verifyOtp()" class="btn GreenBut">Continue</a>
+    </div>
+  </div>
+</form>
+
+
+<form *ngIf="regEmail" [formGroup]="EmailForm">
+  <div class="container ">
+    <div class=" col-xs-12 RegLogo">
+      <img src="assets/images/logo.png" alt="" />
+    </div>
+    <div class="col-xs-12 RegOtpMain ">
+      <div class="MedTitle text-center">What is your email address?</div>
+      <div class=" WelcomeContainer">
+        <span class="Mid">
+          <div class="RegCenter">
+            <div class="col-xs-12 PhoneNumDiv">
+
+              <span *ngIf="EmailForm.controls['email'].invalid && EmailForm.controls['email'].touched">
+                <span class="" style="color:firebrick" *ngIf="EmailForm.controls['email'].hasError('required')">Email is required</span>
+                <span class="" *ngIf="EmailForm.controls['email'].hasError('pattern')">Please Enter your official Email</span>
+              </span>
+
+              <!--<div *ngIf="email.errors"> 
+                    <div *ngIf="email.errors.required">
+                        Official Email required.
+                    </div> 		   
+                    <div *ngIf="email.errors.pattern">
+                        Official Email not valid.
+                    </div> 
+                 </div>-->
+
+              <input type="email" class="PhoneNumInp rq-form-element" formControlName="email" id="Email" value="" />
+              <i></i>
+
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center ">
+      <button role="button" (click)="registerEmail()" [disabled]="EmailForm.invalid" class="btn GreenBut">Continue</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+<form *ngIf="regPassword" [formGroup]="PasswordForm">
+  <div class="container ">
+    <div class=" col-xs-12 RegLogo">
+      <img src="assets/images/logo.png" alt="" />
+    </div>
+    <div class="col-xs-12 RegOtpMain ">
+      <div class="MedTitle text-center">Create your custom password</div>
+      <div class=" WelcomeContainer">
+        <span class="Mid">
+          <div class="RegCenter">
+            <div class="col-xs-12 PhoneNumDiv cursor">
+
+
+              <span *ngIf="PasswordForm.controls['pass'].invalid && PasswordForm.controls['pass'].touched">
+                <!--<span class="" style="color:firebrick" *ngIf="PasswordForm.controls['pass'].hasError('required')">pass is required</span>-->
+                <span class="" *ngIf="PasswordForm.controls['pass'].hasError('pattern')">password should be between 8 and 10 characters and One capital letter</span>
+              </span>
+
+              <input [type]="show ? 'text' : 'password'" class="PassInp rq-form-element text-center" formControlName="pass" id="Email"
+                value="">
+              <a role="button" (click)="showPassword()">
+                <strong id="password">ShowPassword</strong>
+              </a>
+              <i></i>
+            </div>
+            <div class="col-xs-12">
+              <!-- <p class="GreenText">Must be atleast 8 characters and should have UpperCase, LowerCase,Number/SpecialChar and min 8 Chars</p> -->
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center">
+      <button role="button" (click)="registerPassword()" [disabled]="PasswordForm.invalid" class="btn GreenBut">Continue</button>
+    </div>
+  </div>
+</form>
+
+
+
+<form *ngIf="regRePass" [formGroup]="RePasswordForm">
+  <div class="container ">
+    <div class=" col-xs-12 RegLogo">
+      <img src="assets/images/logo.png" alt="" />
+    </div>
+    <div class="col-xs-12 RegOtpMain ">
+      <div class="MedTitle text-center">Create your custom password</div>
+      <div class=" WelcomeContainer">
+        <span class="Mid">
+          <div class="RegCenter">
+            <div class="col-xs-12 PhoneNumDiv ">
+
+              <input [type]="show ? 'text' : 'password'" class="PassInp rq-form-element text-center" [value]="regpass" readonly/>
+              <a role="button" (click)="showPassword()">
+                <strong id="password">ShowPassword</strong>
+              </a>
+            </div>
+            <div class="col-xs-12 PhoneNumDiv cursor MarTop5">
+              <!--<p *ngIf="passwordsnotmatch&&RePasswordForm.controls['regRePass'].pristin" class="PassInp rq-form-element text-center">
+                passwords are not matched
+              </p>-->
+              <input type="password" class="PassInp rq-form-element text-center" formControlName="regRePass" value="" />
+              <i></i>
+            </div>
+            <div class="col-xs-12">
+              <p class="GreenText">
+                <strong>Re-enter your password</strong>
+              </p>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center ">
+      <a role="button" (click)="registerRePass()" class="btn GreenBut">Continue</a>
+    </div>
+  </div>
+</form>
+
+
+<!-- <form *ngIf="regInfo"> -->
+  <form *ngIf= 'regInfo'>
+  <div class="container ">
+    <div class=" col-xs-12 RegLogo">
+      <img src="assets/images/logo.png" alt="" />
+    </div>
+    <div class="col-xs-12 RegOtpMain ZeroPadding ">
+      <div class="BigTitle text-center ">Welcome</div>
+      <div class="MedTitle text-center">Enjoy the power of collective intelligence.</div>
+      <div class="InfoTopDiv">
+        <div class="panel  RegInfoPanel">
+          <div class="panel-heading text-center ThemeFont"> Your basic details</div>
+          <div class="panel-body">
+            <div class="content">
+              Country :
+              <input class="ThemeFont" [value]="countrydetails" readonly> Phone :
+              <input class="ThemeFont" [value]="phoneNumber" readonly> Email :
+              <input class="ThemeFont" [value]="regemail" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center ">
+      <p class="panel-heading text-center ThemeFont">Please verify your Email-Id and click countinue to login</p>
+      <a role="button" class="btn GreenBut" (click)="registerInfo()">Continue</a>
+    </div>
+  </div>
+</form>
+

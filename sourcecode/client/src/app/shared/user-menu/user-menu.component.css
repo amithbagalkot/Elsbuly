@@ -1,0 +1,21 @@
+.dropup .dropdown-menu {
+    /* top: auto; */
+    bottom: 100%;
+    margin-bottom: .125rem;
+    color: #62b22b;
+  }
+  .dropdown-item {
+    color: #000000;
+  }
+  a{
+    text-decoration: none;
+  }
+  .dropup:hover .dropdown-menu{
+      display: inline-block;
+  }
+
+  
+
+  .drpdown {
+    margin-top: 0rem;
+  }

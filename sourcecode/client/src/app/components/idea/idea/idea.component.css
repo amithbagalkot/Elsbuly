@@ -1,0 +1,12 @@
+a{
+    text-decoration:  none;
+}
+.add_info a:hover{
+   background-color:green;
+   color:white;
+   border-radius: 4PX;
+} 
+
+.rating_style {
+    
+}

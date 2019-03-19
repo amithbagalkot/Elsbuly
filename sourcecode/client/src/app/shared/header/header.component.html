@@ -1,0 +1,22 @@
+<body>
+    
+    <div id="header" class="navbar navbar-default navbar-fixed-top elsbuly_topbar">
+     
+      <div class="col-xs-1 NavIcon"><img [src]="images_icon"  alt=""/></div>
+      <div class="col-xs-4 col-xs-offset-3 col-lg-1 col-lg-offset-0 logo_in"><img [src]="images_search" class="img-responsive" alt=""/></div>
+      <div class="col-xs-1 pull-right NavIcon"><img [src]="images_logo" alt=""/></div>
+      <!-- <p class='welcome'><strong class= "dark-grey WebTitle">{{name}}</strong></p> -->
+      <p class='welcome' *ngIf='status === 30102'><strong class= "dark-grey WebTitle">Advisor</strong></p>
+      <p class='welcome' *ngIf='status === 30101'><strong class= "dark-grey WebTitle">Trader</strong></p>
+      <p class='welcome' *ngIf='status === 30103'><strong class= "dark-grey WebTitle">Admin</strong></p>
+    </div>
+    <!-- <div class="col-xs-4 col-xs-offset-3 col-lg-1 col-lg-offset-0 logo_in">
+      <img [src]="images_search" class="img-responsive" alt="" />
+    </div>
+    <div class="col-xs-1 pull-right NavIcon">
+      <img [src]="images_logo" alt="" />
+    </div>
+  <div  >
+    <button (click)=' logout()'>logout</button>
+  </div> -->
+</body>

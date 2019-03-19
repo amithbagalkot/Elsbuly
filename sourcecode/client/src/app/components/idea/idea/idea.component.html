@@ -1,0 +1,23 @@
+<!--<span class="Mid"> {{idea.idea_type}} {{idea.script_name}} {{idea.exchange_code}} {{idea.idea_time}} ${{idea.price_target1}} OPTIONS ${{idea.idea_strength}}-->
+    <ngx-spinner size="medium" bdColor="rgba(255, 255, 255, 0.1)" color="#000000" type="ball-spin-fade"></ngx-spinner>
+<span class="Mid"> {{idea.script_name}} {{idea.actual_exchange_code}} {{idea.base_symbol}} {{idea.idea_type}} {{idea.idea_strength}}  {{idea.price_at_idea_open}} {{idea.trader_note}}  {{idea.idea_time}}
+  by
+  <span class="advName"><strong>{{idea.user_name}}</strong></span><br />
+  <span class="add_info" *ngIf="rate">
+    <span>
+      <a class="rating_style" href="Ratings/rating/{{idea.idea_id}}">
+        Ratings
+      </a>
+    </span>
+    <span>
+      <a href="Ratings/ratings_reviews/{{idea.idea_id}}">
+        <strong> Ratings&Reviews </strong>
+      </a>
+    </span>
+    <span>
+      <a class="SlideIcons" href="discussion/join/{{idea.idea_id}}">
+        <i class="far fa-comments"></i>
+      </a>
+    </span>
+  </span>
+</span>

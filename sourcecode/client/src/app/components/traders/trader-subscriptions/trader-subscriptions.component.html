@@ -1,0 +1,67 @@
+
+<app-header></app-header> 
+
+<!-- 
+<div class=" container">
+        <h3 class="dark-grey WebTitle size ">Subscribed Advisor</h3>
+            <div *ngIf="no_subscriptions">
+                <h2 >you dont have any subscribed advisors  </h2>
+            </div>
+    <strong  *ngIf="trader_subscription">Advisor Name</strong>
+  <div><br/>
+        <div *ngFor="let trader_subscriptions of trader_subscriptions;let i = index" >
+            <div class="row">
+                    <div class=" col-lg-3 col-md-2 col-sm-4 col-xs-4">
+                            <a href="#" >{{trader_subscriptions.advisorName}}</a>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4 ss">
+                    <a href="/trader/advisorideas/{{trader_subscriptions?.advisor_id}}" class="btn btn-primary  ">Ideas</a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3"><button (click)="cancelSubscription(trader_subscriptions.advisor_id,i)" class="btn btn-danger">unsubscribe</button></div>
+                    
+            </div>  
+        </div>
+    </div>
+</div> -->
+<!-- 
+<ng-container matColumnDef="Cost of Idea">
+        <mat-header-cell  class="color" *matHeaderCellDef> Cost of Idea </mat-header-cell>
+        <mat-cell class="text"  *matCellDef="let adviosr"> {{adviosr.idea_price}} </mat-cell>
+      </ng-container> -->
+
+      <ng-container *ngIf="trader_subscriptions?.length > 0; then show_subscription; else show_subscription_empty "></ng-container>
+      
+      <ng-template #show_subscription>
+            <h3 class="dark-grey WebTitle ">Subscription</h3>
+            <mat-table [dataSource]="trader_subscriptions"  class="mat-elevation-z8">
+                    <h3 class="dark-grey WebTitle ">Subscription</h3>
+                    <ng-container matColumnDef="AdvisorName">
+                        <mat-header-cell  class="color " *matHeaderCellDef> AdvisorName</mat-header-cell>
+                        <mat-cell class="text heading"  *matCellDef="let subscription">{{subscription.advisorName || subscription.advisorEmail}}</mat-cell>
+                    </ng-container>
+                    <ng-container  matColumnDef="Ideas">
+                        <mat-header-cell class="color"  *matHeaderCellDef> Ideas</mat-header-cell>
+                        <mat-cell class="text"  *matCellDef="let subscription"> <a href="/trader/advisorideas/{{subscription?.advisor_id}}" class="btn btn--white">View Ideas</a></mat-cell>
+                    </ng-container>
+                    <ng-container  matColumnDef="UnSubscribe">
+                        <mat-header-cell  class="color" *matHeaderCellDef> UnSubscribe</mat-header-cell>
+                        <mat-cell class="text"  *matCellDef="let subscription ; let i = index"><button class="btn btn--white btn--red" (click)="cancelSubscription(subscription.advisor_id,i)"> UnSubscribe</button></mat-cell>
+                    </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns:displayColumns"></mat-row>
+                        <div #scroller></div>
+                </mat-table>
+      </ng-template>
+
+      <ng-template #show_subscription_empty>
+            <div class = "card" >
+                    <p class="card-description">
+                      Please subscribe to The Advisor
+                    </p>
+                  </div>
+      </ng-template>
+
+<!-- 
+<div #scroller></div> -->
+
+<app-footer></app-footer>

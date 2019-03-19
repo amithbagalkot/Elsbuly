@@ -1,0 +1,10 @@
+
+<div class = "card" *ngIf="no_ideas">
+    <p class="card-description">
+       No Ideas To Display
+    </p>
+  </div>
+
+ <app-idealist [Ideas]="trader_Subsribe_Adviosr_Ideas" [advisorNames]="newAdvisorNames" [exchanges]= "newExchange_codes"></app-idealist> 
+  
+<app-footer></app-footer>

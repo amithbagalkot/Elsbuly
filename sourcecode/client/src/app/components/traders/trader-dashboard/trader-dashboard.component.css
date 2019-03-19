@@ -1,0 +1,191 @@
+h1{
+    margin-top: 60px;
+    margin-left: 10px;
+}
+.heading {
+    text-align: center;
+    color: #62b22b;
+    font-weight: 20px;
+}
+/* .img { */
+    /* The image used */
+    /* background-image: url("../../../../assets/images/bg.jpg"); */
+    
+    /* Full height */
+    /* height: 100%;  */
+
+    /* Center and scale the image nicely */
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+
+
+/* 
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 30px;
+}
+
+
+.card:hover{
+    box-shadow: 0 8px 16px rgba(0,0,0, 4);
+} */
+
+p{
+    text-align: center;
+}
+
+.card-container {
+    
+    margin-top: 100px;
+    margin-left: 100px;
+    display: grid;
+    padding: 1rem;
+    /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, 30rem);
+    grid-gap: 15rem;
+    transition: all 0.5s ease;
+}
+
+.card-container .card-1 {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    /* grid-column: 2/3; */
+}
+.card-container .card-2 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    /* grid-column: 3/4; */
+}
+.card-container .card-3 {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    /* grid-column: 1/2; */
+}
+.card {
+    background:white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+.thumbnail {
+    margin-top: 1vw;
+    height: 124px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    border-radius: 50%;
+    /* box-shadow:   0 13px 26px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.2);  */
+    background-color: white;
+    box-shadow: rgba(10, 10, 10, 0.1) 0px 2px 3px, rgba(10, 10, 10, 0.1) 0px 0px 0px 1px;
+    color: rgb(74, 74, 74);
+    max-width: 100%;
+}
+
+.card:hover{
+    transform: scale(1.01);
+}
+.col{
+    margin-top: .2vw;
+    height: 16% !important;
+    width: 100%
+}
+.card__description {
+    padding: .5rem;
+    line-height: 1.6em;
+    height: 300px;
+    text-align: center;
+    transition: .3s ease-in-out;
+    transform: scale(1);
+}
+.overlay {
+    filter:alpha(opacity=1);
+    opacity:1;
+    position: absolute;
+    left: 100px;
+    text-align: center;
+    bottom: 20px;
+    top: 280px;
+	overflow:hidden;
+	height: 3.5em;
+    width:100%;
+	transition: transform 0.35s ease-in-out;
+    cursor:pointer;
+    text-decoration: none;
+    transition-delay: 0.2s;
+    z-index: 100 !important;
+}
+a{
+    text-decoration: none;
+    color: green;
+}
+.card__description:hover .overlay{
+    /* transform: scale(1.1); */
+
+    transform: translateY(0px);
+    opacity: 1;
+    filter:alpha(opacity=100);
+    overflow:hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media(max-width : 600px){
+    .card-container {
+        grid-template-columns: repeat(auto-fill, 25rem);
+        grid-gap: 5rem;
+        margin-top: 6rem;
+        /* margin-left: 5vw;
+        margin-right: 5vw; */
+        margin-left: 12%;
+        display:  grid;
+        align-items: center;
+    }
+    .card-container .card-1 {
+      
+        grid-row: 3/4;
+        grid-column: 1/2; 
+        /* grid-column: 2/3; */
+    }
+    .card-container .card-2 {
+        grid-row: 2/3;
+         grid-column: 1/2;
+        /* grid-column: 3/4; */
+    }
+    .card-container .card-3 {
+        grid-row: 1/2;
+         grid-column: 1/2;
+        /* grid-column: 1/2; */
+    }
+    .overlay{
+        opacity: 1;
+        position: absolute;
+        display: inline-block;
+        left: 70%;
+        text-align: center;
+        bottom: 20px;
+        top: 92%;
+        overflow: hidden;
+        height: 1.5em;
+        width: 30%;
+    }
+}
+@media(max-width : 900px){
+    .card-container {
+        margin-top: 15%;
+        margin-left: 2%;
+        display: -ms-grid;
+        display: grid;
+        padding: 1rem;
+        -ms-grid-columns: (30rem)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 25rem);
+        grid-gap: 5rem;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+}
+

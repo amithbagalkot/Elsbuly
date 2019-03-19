@@ -1,0 +1,60 @@
+.size {
+    font-size: 3rem;
+}
+
+@media only screen and (min-width:0px) and (max-width:1200px){}
+.WebTitle {
+    margin-top: 8vh !important;
+    margin-left: 05vw;
+    width: 60vw;
+    font-size: 3rem;
+} 
+.color{
+    background-color: #62b22b;
+    height: 4rem;
+    color: white;
+    font-size: 1.6rem;
+}
+.heading {
+    text-transform: uppercase;
+}
+.btn--white{
+    background-color: #62b22b;
+    color: white;
+    padding: 0.5rem;
+    width: 40%;
+}
+.btn--red{
+    background-color: #d9534f;
+}
+.mat-table {
+    display: block;
+    width: 80%;
+    margin-left: 3rem;
+}
+
+.card-description{
+    text-align: center;
+    font-size: 3rem;
+    width: 40vw;
+}
+
+.card {
+    display: grid;
+    width: 40vw;
+    height: 20vw;
+    margin-top: 20vh;
+    margin-left: 30vw;
+    color: #62b22b;
+    font: 2rem;
+    background:white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);  
+}
+
+@media(max-width:750px) {
+  
+    .btn--white {
+        width: 85%;
+    }
+    
+}

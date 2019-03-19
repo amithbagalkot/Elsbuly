@@ -1,0 +1,220 @@
+.loading{
+    margin-top:150px;
+    animation-name: example;
+    animation-duration: 7s;
+    margin-left: 500px;
+}
+.online_users{
+    position: fixed;
+     margin-left:-10vw; 
+}
+
+ @keyframes example {
+    0%   {color: red;}
+    25%  {color:green;}
+    50%  {color:red;}
+    100% {color:green;}
+}
+
+.discussion-chat{
+    overflow-y: scroll;
+    height: 234px;
+}
+
+.inside {
+    padding-right: 4.6em;
+}
+
+.insideButton {
+    position: absolute;
+    padding-right: 1em;
+    top: 8px;
+    right: 60px;
+    width: 5em;
+    border-radius: 26%
+}
+
+
+.container{
+     margin-left: 175px; 
+      /* border:1px solid red;  */
+     /* padding-left:100px; */
+}
+
+.insideExit{
+    top: 0.7rem;
+    right: 4%;
+    width: 3vw;
+    position: absolute;
+}
+.messageContainer{
+    display: flex;
+    height: auto;
+    width: 70%;
+    min-width: 200px;
+    border-radius: 5px;
+    align-items:stretch;
+    background-color: #eee;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.isOwnMessageContainer{
+    background-color: #01579B;
+}
+
+.messageData{
+    flex: 1;
+    padding: 10px;
+    font-size: 0.7em;
+    /* background-color:aqua; */
+    width:30px;
+     /* border:1px solid red;  */
+   
+}
+/* .sender .timestamp{
+    color;
+} */
+
+.sender{
+    display: block;
+    color: #222;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.isOwnSender{
+    color: #E1F5FE;
+}
+
+.timestamp {
+    color: #555;
+    font-style: italic;
+    word-wrap: break-word;
+}
+
+.isOwnTimestamp{
+    color: #4FC3F7;
+}
+
+.messageContent{
+    height: auto;
+    flex: 9;
+     /* background-color:aquamarine;  */
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* margin-left:50px; */
+
+}
+
+.isOwnMessageContent{
+    background-color: #E3F2FD;
+    color: #01579B;
+}
+
+
+/* .StripContainerSingle{
+   
+} */
+/* @media only on screen and min-width() */
+@media only screen and (min-width:1200px) {
+    .idea{
+        /* margin-top: 75px; */
+        margin-left: 380px;
+        background-color: rgb(3, 193, 3);
+        border-radius: 6px;
+        width:500px;
+        color:white;
+        padding-left:20px;
+        /* border-radius:5px; */
+         position:fixed; 
+        top:50px;
+    }
+}
+
+
+.chatInput{
+    flex: 10;
+    font-size: 1.3em;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eee;
+    color: #000;
+    transition: 0.1s ease-out;
+    padding-left: 80px;
+    width:600px;
+    /* border-color:black; */
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.chatInput:focus{
+    background-color: #E4F1FE;
+    color: #222;
+    transition: 0.2s ease-in;
+}
+
+.chatButton{
+    flex: 1;
+     padding-top: 2px;
+   /* padding: 8px 24px; */
+    font-size: 1.3em;
+    font-family: 'Droid Sans', sans-serif;
+    /* background-color:; */
+    color: white;
+    transition: 0.2s ease-out;
+    min-width: 10px;
+    height: 30px;
+    /* border-radius: 6px; */
+    margin-left: -3px;
+    /* border-color: black; */
+    /* border-top-left-radius: -2px; */
+    /* margin-top:5px; */
+}
+
+/* .chatButton:hover{
+    background-color: #444;
+} */
+.els{
+    margin-bottom: -02vh;
+    border:1px solid red;
+    width:20px;
+}
+.top_s{
+    border:1px solid white;
+    color:white;
+}
+.user_name{
+    background-color:aqua;
+}
+.userListWrapper {
+    background-color: #2A2845;
+    color: #fff;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+    flex: 1;
+    order: 1;
+    padding:20px 0px 40px 30px;
+    border-right: 1px solid #222;
+}
+.online_users{
+    position: fixed;
+     margin-left:0px; 
+}
+.maincontent{
+    margin-left:80px;
+}
+
+
+
+@media only  screen and (min-width:0px) and (max-width:600px){
+    .container{
+        margin-left: 7px; 
+   }
+   .insideExit{
+    top: 0.7rem;
+    right: 10%;
+    width: 3%;
+    position: absolute;
+}
+}

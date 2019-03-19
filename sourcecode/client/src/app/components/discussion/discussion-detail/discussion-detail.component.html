@@ -1,0 +1,92 @@
+<div class="loading" *ngIf="loading">
+    <h1>Loading...</h1>
+</div>
+
+<div class="InnerMiddleTitle">
+    <span class="Mid">
+        <i class="far fa-comments BottomTabIcon"></i> Participate</span>
+</div>
+        
+    <div class="StripContainerSingle" *ngIf="!loading">
+
+        <div class="col-lg-12 col-xs-12 Horz_stripSingle">
+            <div *ngFor="let idea of idea">
+                <span class="Mid">{{idea?.idea_id}} {{idea?.idea_type}} {{idea?.script_name}} {{idea?.exchange_code}} {{idea?.idea_time}} ${{idea?.price_target1}}
+                    OPTIONS ${{idea?.idea_strength}} LO by
+                    <span class="advName">Lucky Advisor</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="online_users" *ngIf="chatInput">
+            <app-discussion-user-list></app-discussion-user-list>
+        </div>
+        <div class="top_s">
+            <p>hi</p>
+        </div>
+        
+            <div class="col-lg-12 frame">
+                    <ng-container *ngIf="user_right_message; then left_side; else right_side "></ng-container>
+                   <ng-template #right_side>
+                    <ul class="discussion-chat">
+                            
+                        <div *ngFor="let data of messagesData">
+                            <div class="ChatNameRight">{{data.userName}}</div>
+                            <li style="width:100%;">
+                                <div class="msj-rta macro">
+                                    <div class="text text-r">
+                                        <p>{{data.msg}}</p>
+                                        <p>
+                                            <small> {{data.timeSent }}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="avatar" style="padding:0px 0px 0px 10px !important"></div>
+                            </li>
+                            
+                        </div>
+                    </ul>
+                   </ng-template>
+                    <ng-template #left_side>
+                        <ul class="discussion-chat">
+                            
+                            <div *ngFor="let data of messagesData">
+                                <div class="ChatNameLeft">{{data.userName}}</div>
+                                <li style="width:100%;">
+                                    <div class="msj macro">
+                                        <div class="text text-l">
+                                            <p>{{data.msg}}</p>
+                                            <p>
+                                                <small> {{data.timeSent }}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="avatar" style="padding:0px 0px 0px 10px !important"></div> -->
+                                </li>
+                                
+                            </div>
+                        </ul>
+                    </ng-template>
+                    <div class="msj-rta macro" style="margin:auto; width:100%; background: white !important;">
+                            
+                        <!-- <div *ngIf="chatInput"> -->
+                        <div class="textSend ">
+                            <div *ngFor="let idea of idea">
+                                <input class="mytext inside" [(ngModel)]="message" (keydown)="handleSubmit($event)" placeholder="Type a message" />
+                                <button class="btn insideButton" (click)="send()">Send</button>
+                                <a href="discussion/exit/{{idea?.idea_id}}">
+                                    <Strong class="btn insideExit" (click)="exit()">Exit</Strong>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- </div>  -->
+                        
+                    </div>
+            </div>
+           
+    </div>
+    <div #scroller></div>
+
+
+<app-header></app-header>
+<app-footer></app-footer>

@@ -1,0 +1,53 @@
+{
+    "index": "/index.html",
+    "appData": {
+        "test": true
+    },
+    "assetGroups": [
+        {
+            "name": "app",
+            "installMode": "prefetch",
+            "updateMode": "prefetech",
+            "resources": {
+                "files": [
+                    "/favicon.ico",
+                    "/index.html",
+                    "/*.bundle.css",
+                    "/*.bundle.js",
+                    "/*.chunk.js"
+                ],
+                "urls": [
+                    "/font-awesome.min.css",
+                    "/css?family=Roboto:100,300,400,500,700,900",
+                    "/v5.0.6/js/all.js",
+                    "/code.jquery.com/jquery-2.2.3.min.js",
+                    "/css/bootstrap.min.css",
+                    "/fonts.gstatic.com/**"
+                ]
+            }
+        },
+        {
+            "name": "assets",
+            "installMode": "lazy",
+            "updateMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/assets/**"
+                ]
+            }
+        }],
+        "dataGroups": [
+            {
+                "name": "api",
+                "urls": [
+                   "/ideas", "/menu", "trader/ideas", "get_image", "advisors", "common", "traders", "wallet"
+                ],
+                "cacheConfig": {
+                    "maxSize": 1000,
+                    "maxAge": "3d",
+                    "timeout": "10s",
+                    "strategy": "freshness"
+                }
+            }
+        ]
+}

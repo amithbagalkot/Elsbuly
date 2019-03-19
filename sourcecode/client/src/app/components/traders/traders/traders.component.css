@@ -1,0 +1,143 @@
+ .WebTitle {
+    margin-top: 8vh !important;
+    margin-left: 05vw;
+    width: 60vw;
+    font-size: 3rem;
+} 
+.heading{
+    background-color: #62b22b;
+    color: white;
+}
+.container{
+    margin-top: -2vh;  
+}
+.user-name {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.user-img{
+    align-items: initial;   
+    vertical-align: middle;
+    height: 7rem;
+    width: 7rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 60%;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 3.5rem;
+    display: inline-block;
+    border-radius: 100rem;
+    transition: all .2s;
+}
+.btn .btn--color{
+    background-color: #fff;
+    color: #777;
+}
+
+
+@media(max-width: 600px ) {
+    width: 50%;
+}
+/*
+@media only screen and (min-width:768px) and (max-width:960px){
+    .container{
+        margin-top: 8vh;  
+        width: 700px;
+        
+    }
+} 
+@media only screen and (min-width:960px) and (max-width:1200px){
+    .container{
+        margin-top: 8vh;  
+        width: 700px;
+        
+    }
+} 
+
+@media only screen and (min-width:1200px) and (max-width:1600px){
+    .container{
+        margin-top: 8vh;  
+        width: 700px; 
+       
+    }
+} 
+@media only screen and (min-width:0px) and (max-width:400px){
+    .container{
+        margin-top: 8vh;  
+        
+    }
+    .advisor{
+        padding:0px;
+     }
+     
+} 
+
+.main-div{
+    overflow: scroll;
+    
+}
+
+@media only screen and (min-width:400px) and (max-width:768px){
+    .container{
+        margin-top: 10vh;  
+        
+    }
+    .advisor{
+        padding:0px;
+     }  
+} 
+
+.main-div{
+    overflow: scroll;
+    
+} */
+
+.color{
+    background-color: #62b22b;
+    height: 4rem;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.text{
+    text-transform: capitalize;
+}
+.btn--white{
+    background-color: #62b22b;
+    color: white;
+    padding: 1rem;
+    width: 60%;
+}
+.mat-header-row, .mat-row {
+    margin-top: 1rem;
+}
+
+.mat-table {
+    display: block;
+    width: 80%;
+    margin-left: 3rem;
+}
+
+
+@media(max-width:500px){
+    .color-rating {
+        color: red;
+       display: none;
+    }
+    .mat-header-row, .mat-row {
+        margin-top: 2rem;
+    }
+    .btn--white{
+       
+        padding: .2rem;
+       
+    }
+}

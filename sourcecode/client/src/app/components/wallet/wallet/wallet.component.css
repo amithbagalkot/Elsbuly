@@ -1,0 +1,100 @@
+/* .center-block {
+    margin-left: 400px;
+    margin-top: -40px;
+  }
+  p{
+    margin-top: 250px;
+  }
+  .btn{
+    margin-left: 600px;
+    margin-top: -40px;
+  } */
+  .payment{
+    margin-top: 250px;
+    float:auto;
+  }
+  .WebTitle {
+    margin-top: 8vh !important;
+    width: 50vw;
+} 
+
+.size{
+  font-size: 3rem;
+} 
+
+
+.wallet-profile {
+  border: 1px solid #DEEAEE;
+  background: #fff;
+  border-radius:.3rem;
+  height: 10rem;
+  -moz-border-radius: .3rem;
+  -webkit-border-radius: .3rem;
+  padding: 2rem;
+  margin-left: 5rem;
+  width: 80%;
+}
+.btn-wallet{
+  width: 20rem;
+  background: #62b22b !important;
+  color: #fff!important;
+  border-radius: 4px!important;
+  -moz-border-radius: 4px!important;
+  -webkit-border-radius: 4px!important;
+  cursor: pointer;
+  margin: 0;
+  min-height: 40px!important;
+  box-shadow: none!important;
+  text-transform: none!important;
+  padding: 0 15px!important;
+}
+
+.your-wallet {
+  overflow:hidden;
+}
+.your-wallet ul li.col {
+  float: left!important;
+  margin: -4rem 0 0 35rem;
+  width: 300px;
+}
+ul {
+  list-style: none !important;
+  width: 0 !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  bottom: 0 !important;
+  display: block !important;
+  position: unset 
+}
+
+.wallet-profile .your-wallet ul li:first-child {
+  float: left!important;
+  width: 245px;
+  color: #000;
+  border-right: 1px dotted #DEEAEE;
+}
+
+.wallet-profile  .your-wallet ul li:first-child span.value {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+}
+.wallet-input {
+  width: 25rem;
+}
+
+.wallet-profile .your-wallet ul li.last {
+  float: none;
+  margin-left: 80rem;
+  margin-top: 1rem;
+  /* margin-top: 4px; */
+}
+
+.transaction_table{
+  margin-left: 4rem;
+}
+
+.wallet-scroll{
+  overflow-y: scroll;
+  height:150px;
+}

@@ -1,0 +1,15 @@
+export const INITIAL_STATE={
+    GetdiscussionUser:false,
+    hasError:false,
+    getIdeaBoard: null,
+    getideaBoardsuccess: false,
+    getIdeaBoardTrader: false,
+    getIdeaBoardTraderUser: null,
+    error:null,
+    result1:null,
+    result2:null,
+    result3:null,
+    result4:null,
+    result5:null,
+    result6:null,
+}

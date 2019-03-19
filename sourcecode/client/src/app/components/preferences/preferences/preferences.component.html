@@ -1,0 +1,35 @@
+<div class="preference">
+
+        <h3 class="dark-grey WebTitle "> Dashboard Preferences</h3>
+        <div class="side" *ngFor="let p of preferenceChecked | slice:0:3; let i = index;">
+                <div class="">
+                        <div>{{p.name}}
+                                <input type="checkbox" [checked]="p.checked" (change)="preferences($event, i)">
+                        </div>
+                </div>
+        </div>
+
+</div>
+
+<div class="notifications">
+        <h4 class="dark-grey WebTitle ">Enable Or Disable Notifications</h4>
+        <div class="side" *ngFor="let p of preferenceChecked | slice:3:6; let i = index;">
+                <div>{{p.name}}
+                        <input type="checkbox" [checked]="p.checked" (change)="preferences($event,i+3)">
+                </div>
+        </div>
+</div>
+
+
+
+<!-- <div class="cards">
+        <div class="card__description">
+                <p>Subscribe to get desktop notification</p>
+                <div class="center">
+                        <button type="submit" class="btn green-btn" (click)="notify()">Subscribe</button>
+                </div>
+        </div>
+
+</div> -->
+<app-header></app-header>
+<app-footer></app-footer>

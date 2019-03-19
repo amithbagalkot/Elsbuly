@@ -1,0 +1,78 @@
+
+<div class="container">
+  <h3 class="dark-grey WebTitle size ">Wallet Page</h3>
+</div>
+
+<ng-container *ngIf="amount?.length > 0; then paymentBlock; else addPaymentBlock "></ng-container>
+
+<ng-template #paymentBlock>
+    <div class="wallet-profile" *ngFor="let payment of amount">
+        <div class="your-wallet">
+          <ul>
+            <li>
+              <span class="value"> <i class="fas fa-dollar-sign"></i>&nbsp;Rs {{payment.payment_amount}} </span>
+              <span class="text">Your Wallet Balance</span>
+            </li>
+            <li class="col">
+              <mat-form-field class="md-default-theme wallet-input">
+                <input type="text" matInput placeholder="Enter Amount to be Added in Wallet" value="" [(ngModel)]="addAmount">
+              </mat-form-field>
+      
+            </li>
+            <li class="last">
+                <button (click)='addWallet()' class=" btn btn-wallet">Add Money to Wallet</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+</ng-template >
+<ng-template #addPaymentBlock>
+    <div class="wallet-profile">
+    <div class="your-wallet">
+        <ul>
+          <li>
+            <span class="value"> <i class="fas fa-dollar-sign"></i>&nbsp;Rs {{payment?.payment_amount ? payment?.payment_amount : 0}} </span>
+            <span class="text">Your Wallet Balance</span>
+          </li>
+          <li class="col">
+            <mat-form-field class="md-default-theme wallet-input">
+              <input type="text" matInput placeholder="Enter Amount to be Added in Wallet" value="" [(ngModel)]="addAmount">
+            </mat-form-field>
+    
+          </li>
+          <li class="last">
+              <button (click)='addWallet()' class=" btn btn-wallet">Add Money to Wallet</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+</ng-template>
+
+<div class="container">
+    <h6 class="dark-grey WebTitle size">Transaction Details</h6>
+</div>
+
+<div  class="wallet-scroll" >
+    <mat-table [dataSource]='transaction_data' class="transaction_table" >
+        <ng-container matColumnDef="Date">
+            <mat-header-cell  *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell  class="text"  *matCellDef="let transaction">{{transaction.date_created}}</mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="Amount">
+              <mat-header-cell  *matHeaderCellDef>Amount</mat-header-cell>
+              <mat-cell  class="text"  *matCellDef="let transaction">{{transaction.trx_amount}}</mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="Transaction">
+                <mat-header-cell  *matHeaderCellDef>Transaction</mat-header-cell>
+                <mat-cell  class="text"  *matCellDef="let transaction">{{transaction.trx_reference }}</mat-cell>
+              </ng-container>
+    
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+<app-header></app-header>
+ <app-footer></app-footer>

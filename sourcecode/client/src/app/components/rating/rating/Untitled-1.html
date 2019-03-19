@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>elsbuly</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom_styles.css" rel="stylesheet">
+	<link href="css/elsbuly_stickybars.css" rel="stylesheet">
+	<link href="css/elsbuly_Ideas_styles.css" rel="stylesheet">
+	<link href="css/discussion_det_style.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<!--<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+--><script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+rel="stylesheet">
+	<style></style>
+	<script>
+	$(document).ready(function() {
+
+	
+var me = {};
+
+var you = {};
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}            
+
+//-- No use time. It is a javaScript effect.
+function insertChat(who, text, time = 0){
+    var control = "";
+    var date = formatAMPM(new Date());
+    
+    if (who == "me"){
+        
+        control = '<div class="ChatNameLeft">'+ who +'</div><li style="width:100%">' +
+                        '<div class="msj macro">' +
+                            '<div class="text text-l">' +
+                                '<p>'+ text +'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</li>';                    
+    }else{
+        control = '<div class="ChatNameRight">'+ who +'</div><li style="width:100%;">' +
+                        '<div class="msj-rta macro">' +
+                            '<div class="text text-r">' +
+                                '<p>'+text+'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '<div class="avatar" style="padding:0px 0px 0px 10px !important"></div>' +                                
+                  '</li>';
+    }
+    setTimeout(
+        function(){                        
+            $("ul").append(control); 
+
+        }, time);
+    
+}
+
+function resetChat(){
+    $("ul").empty();
+}
+
+$(".mytext").on("keyup", function(e){
+    if (e.which == 13){
+        var text = $(this).val();
+        if (text !== ""){
+            insertChat("me", text);              
+            $(this).val('');
+        }
+    }
+});
+
+//-- Clear Chat
+resetChat();
+
+//-- Print Messages
+//insertChat("me", "Hello Tom...", 0);  
+insertChat("you", "Hi, Pablo", 1500);
+//insertChat("me", "What would you like to talk about today?", 3500);
+//insertChat("you", "Tell me a joke",7000);
+//insertChat("me", "Spaceman: Computer! Computer! Do we bring battery?!", 9500);
+//insertChat("you", "LOL", 12000);
+
+
+//-- NOTE: No use time on insertChat.
+});
+	
+	
+	</script>
+	</head>
+
+	<body>
+<div id="header" class="navbar navbar-default navbar-fixed-top elsbuly_topbar">
+      <div class="col-xs-1 NavIcon"><img src="images/settings_icon.png"  alt=""/></div>
+      <div class="col-xs-4 col-xs-offset-3 col-lg-1 col-lg-offset-0 logo_in"><img src="images/logo_in.png" class="img-responsive" alt=""/></div>
+      <div class="col-xs-1 pull-right NavIcon"><img src="images/search_icon.png" alt=""/></div>
+    </div>
+    <div class="InnerMiddleTitle"><span class="Mid"><i class="far fa-comments BottomTabIcon"></i> Participate</span></div>
+<div class="StripContainerSingle">
+      <div class="col-lg-12 col-xs-12 Horz_stripSingle">
+ 
+    <span class="Mid">BUY LEAD NSE MCX  BUY MT  100 BUY MT by <span class="advName">Lucky Advisor</span> </span> 
+    </div>
+       <div class="col-lg-12 frame">
+            <ul></ul>
+            <div>
+                <div class="msj-rta macro" style="margin:auto; background: white !important;">                        
+                    <div class="textSend " style="">
+                        <input class="mytext" placeholder="Type a message"/>
+                    </div> 
+                </div>
+            </div>
+        </div>        
+       
+    </div>
+</body>
+</html>

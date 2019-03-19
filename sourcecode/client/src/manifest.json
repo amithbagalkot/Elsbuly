@@ -1,0 +1,30 @@
+{
+    "name": "ElsbulyApp",
+    "short_name": "Elsbuly",
+    "scope": "/",
+    "start_url": "index.html",
+    "background_color": "#ffffff",
+    "description": "app for stock market",
+    "icons": [
+        {
+            "src": "assets/images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/logo.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "orientation": "any",
+    "display": "standalone",
+    "theme_color": "#62b22b",
+    "gcm_sender_id": "elsbuly_Id",
+    "gcm_user_visible_only": true
+}

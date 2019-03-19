@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": []
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ],
+  "include": [ "**/*.ts",
+    "../node_modules/angular-star-rating/src/star-rating-struct.ts",
+    "../node_modules/angular-star-rating/src/star-rating.component.ts",
+    "../node_modules/angular-star-rating/src/star-rating-config.ts",
+    "../node_modules/angular-star-rating/src/star-rating.controller.ts",
+    "../node_modules/angular-star-rating/src/star-rating.utils.ts",
+    "../node_modules/angular-star-rating/index.ts"]
+}

@@ -1,0 +1,81 @@
+
+#password{
+    color:white;
+    background-color: green;
+    border-radius:2px;
+}
+.content{
+    
+    padding:0px auto;
+    margin-left:220px;
+}
+.dropdown{
+    display: inline-block;
+    top: -180px
+}
+.MedTitle{
+    color:green;
+}
+ .PhoneNumInp{
+    /* border:1px solid yellow; */
+    /* margin-top:261px;
+    position: absolute;  */
+   
+} 
+.WelcomeContainer{
+    padding-left:190px;
+   
+}
+.PhoneNum{
+   width:200px;
+   height: 43px;
+   border-radius: 2px;
+   margin-left:-199px;
+   margin-top:61px;
+   position: absolute; 
+   /* border:1px solid red; */
+}
+.errormsg{
+    position: absolute;
+    margin-top:-19px;
+    margin-left: -130px;
+}
+     
+
+
+  /* .partitioned {
+  letter-spacing: 190px;
+ } */
+  /* border: 0;
+  background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 50px 1px;
+  background-repeat: repeat-x;
+  background-position-x: 35px;
+  width: 220px;
+  min-width:220px; 
+     padding-left: 15px;
+    
+    border: 0;
+    background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 50px 1px;
+    background-repeat: repeat-x;
+    background-position-x: 35px;
+    width: 220px; 
+  } */ 
+
+/*.container{
+   
+    border: 2px green solid;
+}
+.WelcomeContainer{
+    border: 2px green solid;
+}
+.RegCenter{
+    border: 2px red solid;
+}
+.PhoneNumDiv{
+    border: 2px yellow solid;
+}*/
+

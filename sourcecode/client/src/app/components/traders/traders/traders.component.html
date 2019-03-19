@@ -1,0 +1,37 @@
+<h3 class="dark-grey WebTitle ">Advisor Profile</h3>
+
+<mat-table [dataSource]="advisor_data" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="AdviosrName">
+      <mat-header-cell  class="color" *matHeaderCellDef> AdviosrName </mat-header-cell>
+      <mat-cell class="text"  *matCellDef="let adviosr"> {{adviosr.user_name || adviosr.email_id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Exchange">
+      <mat-header-cell  class="color" *matHeaderCellDef> Exchange </mat-header-cell>
+      <mat-cell class="text"  *matCellDef>null </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Cost of Idea">
+      <mat-header-cell  class="color" *matHeaderCellDef> Cost of Idea </mat-header-cell>
+      <mat-cell class="text"  *matCellDef="let adviosr"> {{adviosr.idea_price}} </mat-cell>
+    </ng-container>
+  
+    <div class="rating" >
+      <ng-container  matColumnDef="Ratings">
+        <mat-header-cell  class="color color-rating" *matHeaderCellDef> Ratings </mat-header-cell>
+        <mat-cell class="text color-rating"  *matCellDef> null </mat-cell>
+      </ng-container>
+    </div>
+    
+    <ng-container matColumnDef="Subscribe">
+      <mat-header-cell  class="color" *matHeaderCellDef> Subscribe </mat-header-cell>
+      <mat-cell class="text"  *matCellDef="let adviosr"> <button class="btn btn--white" (click)="subscribe(adviosr)"> Subscribe</button></mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<app-header></app-header> 
+<app-footer></app-footer>

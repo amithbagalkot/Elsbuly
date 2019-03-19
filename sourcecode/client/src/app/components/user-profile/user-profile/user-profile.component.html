@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  
+<div class="profile">
+  <img class='image' id="picture" accept='' src="{{url}}{{this.image_name}}" alt="something went wrong">
+
+  <input #fileInput type='file' name="profile" (change)=uploadImage($event) style='display:none' />
+  <button (click)="fileInput.click()" class="btn-green">upload Image</button>
+    <div class='profileDiv'>
+      <div *ngIf="error">
+        <em class="alert-text alert-danger error">{{dispalyError}}</em>
+      </div>
+      <div class='welcomeDiv'>
+        <strong>Welcome,</strong>
+      </div>
+      <div class='welcomeUser'>{{this.first_name || this.userDetails.first_name|| this.userDetails.user_name || this.userDetails.email_id}}</div>
+    </div>
+  </div>
+
+
+  <form [formGroup]="userProfile">
+
+    <section class="container OptCont ">
+      <div class="container-page move">
+
+        <div class=" col-lg-12 col-md-6 ">
+          <h2 class="dark-grey WebTitle  col-lg-12">Update Profile</h2>
+
+          <div class='form-group col-lg-6'>
+            <div *ngIf="!show_userDetails">
+              <input type="text" class="form-control" name='firstName' formControlName='firstName' required>
+              <label class="user-label">First Name
+                  <span style="color:red">*</span>
+                  <em *ngIf="userProfile.get('firstName').invalid && userProfile.get('firstName').touched" class="alert-text alert-danger">
+                    <em *ngIf="userProfile.get('firstName').hasError('required') " class="alert-text alert-danger">
+                      please fill required field
+                    </em>
+                    <em *ngIf="userProfile.get('firstName').hasError('pattern')" class="alert-text alert-danger">
+                      user name should contain 2 - 15 character long
+                    </em>
+                  </em>
+                </label>
+            </div>
+            <span *ngIf="show_userDetails">First name</span>
+            <div  *ngIf="show_userDetails">
+              <input [readonly]="isReadonly"  type="text" class="form-control"  value="{{first_name}}" name='firstName' placeholder="{{first_name}}" formControlName='firstName'>
+            </div>
+          </div>
+
+          <div class='form-group col-lg-6'>
+            <div *ngIf="!show_userDetails">
+                <input type="text" class="form-control" formControlName='middleName' required>
+                <label class="user-label">Middle Name
+                  <span style="color:red">*</span>
+                  <em *ngIf="userProfile.get('middleName').invalid && userProfile.get('middleName').touched" class="alert-text alert-danger">
+                    <em *ngIf="userProfile.get('middleName').hasError('required')" class="alert-text alert-danger"></em>
+                    please fill required field
+                  </em>
+                </label>
+            </div>
+            <span *ngIf="show_userDetails">Middle name</span>
+            <div *ngIf="show_userDetails">
+                <input [readonly]="isReadonly"  type="text" class="form-control"  value="{{middle_name}}" name='middleName' placeholder="{{middle_name}}" formControlName='middleName'>
+            </div>
+            
+          </div>
+          <div class='form-group col-lg-6'>
+            <div *ngIf="!show_userDetails">
+                <input type="text" class="form-control " formControlName='lastName' required>  
+                <label class="user-label">Last Name
+                  <span style="color:red">*</span>
+                  <em *ngIf="userProfile.get('lastName').invalid && userProfile.get('lastName').touched" class="alert-text alert-danger">
+                    <em *ngIf="userProfile.get('lastName').hasError('required')" class="alert-text alert-danger"></em>
+                    please fill required field
+                  </em>
+                </label>
+            </div>
+            <span *ngIf="show_userDetails">Last name</span>
+            <div *ngIf="show_userDetails">
+                <input [readonly]="isReadonly"  type="text"  class="form-control"  value="{{last_name}}" name='lastName' placeholder="{{last_name}}" formControlName='lastName'>
+            </div>
+            
+          </div>
+          <div>
+            <span class="toggle">Email-Id</span>
+            <div class="form-group col-lg-6">
+              <input [readonly]="isReadonly" tabindex="-1" type="text" id="email" class="form-control" value="{{email_id}}" placeholder="{{email_id}}"
+                formControlName='email'>
+              <label class="user-label">Email-Id
+                <span style="color:red">*</span>
+                <em *ngIf="userProfile.get('email').invalid && userProfile.get('email').touched" class="alert-text alert-danger">
+                  <em *ngIf="userProfile.get('email').hasError('required')" class="alert-text alert-danger"></em>
+                  please fill required field
+                </em>
+              </label>
+            </div>
+          </div>
+          <div class='form-group col-lg-6'>
+            <div  *ngIf="!show_userDetails">
+                <input type="text" list="api" class="form-control" #search formControlName='location' required>
+                <label class="user-label">Location
+                  <span style="color:red">*</span>
+                  <em *ngIf="userProfile.get('location').invalid && userProfile.get('location').touched" class="alert-text alert-danger">
+                    <em *ngIf="userProfile.get('location').hasError('required') || userProfile.get('location').hasError('minlength')" class="alert-text alert-danger">
+                      please fill required field
+                    </em>
+    
+                  </em>
+    
+                </label>
+            </div>
+            <span *ngIf="show_userDetails">Location</span>
+            <div  *ngIf="show_userDetails">
+                <input [readonly]="isReadonly"  tabindex="-1" type="text" class="form-control"  value="{{location}}" name='location' placeholder="{{location}}" formControlName='location'>
+            </div>
+            
+
+          </div>
+          <div>
+            <span class="toggle">Phone Number</span>
+            <div class="form-group col-lg-6">
+              <input [readonly]="isReadonly" tabindex="-1" type="text" class="form-control " value="{{telephone}}" placeholder="{{telephone}}"
+                formControlName='phoneNumber'>
+              <label class="user-label">Phone Number
+                <span style="color:red">*</span>
+                <em *ngIf="userProfile.get('phoneNumber').invalid && userProfile.get('phoneNumber').touched" class="alert-text alert-danger">
+                  <em *ngIf="userProfile.get('phoneNumber').hasError('required')" class="alert-text alert-danger"></em>
+                  please fill required field
+                </em>
+              </label>
+            </div>
+          </div>
+
+          <!-- <div>
+            <input type='file' accept=".jpg, .png" (change)="uploadImage($event)" />
+          </div> -->
+          <div class="from-group col-lg-6">
+
+            <div  *ngIf="!show_userDetails">
+                <input type="date" class="form-control" formControlName='date_of_birth'>
+                <label class="user-label">Date Of Birth
+                  <span style="color: red">*</span>
+                  <em *ngIf="userProfile.get('date_of_birth').invalid && userProfile.get('date_of_birth').touched" class="alert-text alert-danger">
+                    <em *ngIf="userProfile.get('date_of_birth').hasError('required')" class="alert-text alert-danger"></em>
+                    please fill required field
+                  </em>
+                </label>
+            </div>
+            <!-- <span *ngIf="show_userDetails">Date Of Birth</span>
+            <div *ngIf="show_userDetails">
+                <input [readonly]="isReadonly"  tabindex="-1" type="text" class="form-control"  value="{{dateOfBirth | date: 'mediumDate'}}" name='date_of_birth' placeholder="{{dateOfBirth}}" formControlName='date_of_birth'>
+            </div> -->
+           
+          </div>
+          <div class="form-group col-lg-12">
+            <div  *ngIf="!show_userDetails">
+                <label class="gender-label">Gender
+                    <span style="color: red">*</span>
+                    <em *ngIf="userProfile.get('gender').invalid && userProfile.get('gender').touched" class="alert-text alert-danger">
+                      <em *ngIf="userProfile.get('gender').hasError('required')" class="alert-text alert-danger"></em>
+                      please fill required field
+                    </em>
+                  </label>
+                  <input type="radio" name='gender' value='male' formControlName='gender'>
+                  <span>Male</span>
+                  <input type="radio" name='gender' value='female' formControlName='gender'>
+                  <span>Female</span>
+            </div>
+            <span  *ngIf="show_userDetails">Gender</span>
+            <div  *ngIf="show_userDetails">
+                <input [readonly]="isReadonly"  type="text" class="form-control"  style="font-weight: 500rem" value="{{_gender}}" name='gender' placeholder="{{_gender}}" formControlName='gender'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 text-center ">
+            <button  *ngIf="!isReadonly"  type="submit" class="btn GreenBut" (click)="submitDetails($event)" [disabled]="userProfile.invalid">Submit</button>
+            <button *ngIf="'toggle == Edit'" class="btn GreenBut"(click)="editUserDetails()">{{toggle}}</button>
+          </div>
+        </div>
+        </div>
+      </section>
+  </form>
+  <app-header></app-header>
+  <app-footer></app-footer>
+</body>
+
+</html>

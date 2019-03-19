@@ -1,0 +1,69 @@
+Code Syles
+
+	Please see Airbnb Style guide in github
+
+To Start Server
+	
+	You should have node 8.x, npm 5.x
+
+	install nodemon globally
+		npm install -g nodemon
+	
+	After cloning project navigate to server
+
+	Do 
+		npm install
+		npm start
+
+	Server should start on port 3000 (if run in development mode)
+
+Things to read
+
+	Please try to get familiar with all the packages we are using , we will be adding more to that list.
+
+Folder Structure
+
+	bin => www:
+
+		File to configure db, emails etc configuration and start the server 
+
+	config
+
+		config.json
+
+			All our configuration will be here 
+
+	migration
+
+		Sequielize Generated Folder (can be ignored for now)
+
+	models
+
+		All our data models will be  here
+
+	modules
+
+		Will contain files related to apis
+		Each Api wil have 3 main files 
+
+			1. route (for internal routing)
+			2. controller (where our application logic will be)
+			3. service (methods that will be used by controller and can be used by outside module)
+
+			e.g 
+
+				user.controller.js
+				user.route.js
+				user.service.js
+
+	util
+
+		utility methods
+
+	assetes
+
+		this folder will contain ny pdfs , images(if required) , email templates etc
+
+
+
+

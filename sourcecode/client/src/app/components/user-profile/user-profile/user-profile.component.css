@@ -1,0 +1,192 @@
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+.profile{ 
+    white-space: nowrap;
+    padding: 12px;
+    margin-top: 15vh;
+    overflow: hidden;
+    align-items: initial;
+    position: absolute;
+    height: 25vh;
+    width: 20vw;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.move {
+    margin-left: 15vw;
+}
+
+.error {
+    transition: all, 2s, ease;
+    text-align: center;
+}
+.container-profile {
+    font-family: 'Roboto', sans-serif !important;
+	margin-top: 30px;
+	margin-bottom: 90px; 
+    margin-left: 300px;
+}
+
+.image {
+    align-items: initial;   
+    vertical-align: middle;
+    height: 80px;
+    width: 80px;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 60%;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.profileDiv {
+    padding: 5px 0 0 16px;
+    width: calc(100% - 50px);
+}
+.profileDiv .welcomeDiv{
+    max-width: 165px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.toggle {
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: 500;
+
+}
+.toggle input {
+    border: 0;
+}
+.img_description{
+    visibility: hidden;
+}
+#picture:hover .img_description {
+    visibility: visible
+}
+
+.form-control{
+    font-size: 14px;
+    height: 60px;
+}
+.gender-label{
+    font-weight: 400;
+}
+
+    .user-label{
+    align-items: initial;
+    cursor: default;
+    pointer-events: none;
+    width: 100%;
+    font-size: 14px;
+    transition:transform .2s ease-in;
+    position:absolute;
+    transform-origin: top left;
+    padding: 18px 20px 0; 
+    left: 0;
+    top: 0;
+    color: var(--color-grey-grade4);
+    font-weight: 400;
+}
+.form-control:focus~.user-label,
+.form-control:valid~.user-label{
+    transform: translateY(-30%)scale(.815);
+    padding: 5px, 0, 0, 20px;
+    top: 0px;
+   
+    font-weight: 400;
+   }
+
+
+
+.form-control:read-only~label{
+    pointer-events: none;
+    cursor: not-allowed;
+    display: none;
+}
+.form-control:read-only {
+    pointer-events: none;
+}
+
+
+.btn-green {
+    background-color:#62b22b; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+ input.ng-invalid.ng-touched {
+    border: 1px solid red;
+   
+  }
+  .user-label.ng-invalid.ng-touched {
+    color: red;
+  }
+
+  @media(max-width: 600px) {
+    .profile{ 
+        white-space: nowrap;
+        padding: 0.8rem;
+        margin-top: 15vh;
+        align-items: initial;
+        position: absolute;
+        height: 15vh;
+        width: 20vw;
+        display: inline-block;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .image {
+        align-items: initial;   
+        vertical-align: middle;
+        height: 05vh;
+        width: 05vw;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 40%;
+        outline: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .profileDiv {
+        padding: 0.4rem 0 0 1px;
+        width: 05vw;
+    }
+    .profileDiv .welcomeDiv{
+        max-width: 05vw;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .btn-green {
+        background-color:#62b22b; /* Green */
+        border: none;
+        color: white;
+        padding: 0.4rem 0.7rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.4rem;
+    }
+    .move {
+        margin-left: 15vw;
+        margin-right: 05vw;
+    }
+}

@@ -1,0 +1,46 @@
+<div class="main_idea_list">
+        <div class="InnerMiddleTitle">
+                <span class="Mid"> 
+                     <i class="far fa-lightbulb BottomTabIcon"></i> Ideas</span> 
+             </div>
+             
+             
+             <div class='dropdown' *ngIf='!ideaStatuss'>
+             
+                 <div  class='dropdown dropdown__exchange_search'>
+             
+             
+                     <label class="control-label F2 Bold4">Exchange:</label>
+                     <input  type="text" list="exchange"  [(ngModel)]="exchange_search" placeholder='ex: NSE, BSE'>
+                     <datalist type="text" id="exchange">
+                         <option *ngFor='let exchange of exchanges' [value]="exchange"></option>
+                     </datalist>
+                 </div>
+                 <div class='dropdown dropdown__advisor_search' >
+                     
+                         <label class="control-label F2 Bold4">Advisor:</label>
+                         <input list='advisor' type="text" [(ngModel)]="advisor_search" placeholder='ex: Advisor_name'>
+                         <datalist type='text' id='advisor'>
+                             <option *ngFor='let advisorName of advisorNames' [value]=advisorName></option>
+                         </datalist>
+                     
+                 </div>
+             
+                 <div class='dropdown dropdown_script_search'>
+                     <label class="control-label F2 Bold4">Script:</label>
+                     <input type="text" list='script' [(ngModel)]="script_search" placeholder='ex: script_search'>
+                     <datalist type='text' id='script'>
+                         <option *ngFor='let advisorName of advisorNames' [value]=advisorName></option>
+                     </datalist>
+                 </div>
+             </div>
+             <div class="StripContainer" *ngIf='!ideaStatuss'>
+                 <div *ngFor="let idea of Ideas | filter_search: exchange_search:advisor_search:script_search" class="col-lg-4 col-xs-4 Horz_strip">
+                     <app-idea [idea]="idea"></app-idea>
+                 </div>
+             </div>
+</div>
+
+
+<app-header></app-header>
+<app-footer></app-footer>
